@@ -33,35 +33,28 @@
         margin-top: 20px;
         font-size: 18px;
       }
-      .team-form {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+      .team-input {
+        width: 200px;
+        height: 30px;
         margin-top: 20px;
-      }
-      .team-form input[type="text"] {
-        width: 300px;
-        height: 40px;
-        padding: 10px;
         font-size: 18px;
-        margin-right: 10px;
       }
-      .team-form input[type="submit"] {
-        width: 100px;
-        height: 40px;
+      .team-btn {
+        margin-top: 20px;
+        font-size: 18px;
+        padding: 10px 20px;
         background-color: lightgray;
         border: none;
-        font-size: 18px;
+        border-radius: 5px;
         cursor: pointer;
       }
     </style>
   </head>
   <body>
     <h1>Team Ersteller</h1>
-    <div class="team-form">
-      <input type="text" id="team-name" placeholder="Name des Teams">
-      <input type="submit" value="Team erstellen" id="create-team-btn">
-    </div>
+    <p>Erstelle dein eigenes Team:</p>
+    <input type="text" class="team-input" id="team-name" placeholder="Name des Team">
+    <button class="team-btn" id="create-team-btn">Team erstellen</button>
     <div class="team-container">
       <!-- Hier kommen die Teams hin -->
     </div>
@@ -72,8 +65,7 @@
       const teamNameInput = document.querySelector("#team-name");
       let teamId = 0;
 
-      createTeamBtn.addEventListener("click", function(event) {
-        event.preventDefault();
+      createTeamBtn.addEventListener("click", function() {
         const teamName = teamNameInput.value;
         if (!teamName) {
           return alert("Bitte gib einen Namen für das Team ein.");
@@ -82,4 +74,8 @@
         const teamCard = document.createElement("div");
         teamCard.classList.add("team-card");
         teamCard.innerHTML = `
-          <div class="team-header">${
+          <div class="team-header">${teamName}</div>
+          <div class="team-body">
+            <p class="team-member">Mitglied 1</p>
+            <p class="team-member">Mitglied 2</p>
+            <p class="team-member">Mit
