@@ -33,28 +33,13 @@
         margin-top: 20px;
         font-size: 18px;
       }
-      .team-input {
-        width: 200px;
-        height: 30px;
-        margin-top: 20px;
-        font-size: 18px;
-      }
-      .team-btn {
-        margin-top: 20px;
-        font-size: 18px;
-        padding: 10px 20px;
-        background-color: lightgray;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
     </style>
   </head>
   <body>
     <h1>Team Ersteller</h1>
     <p>Erstelle dein eigenes Team:</p>
-    <input type="text" class="team-input" id="team-name" placeholder="Name des Team">
-    <button class="team-btn" id="create-team-btn">Team erstellen</button>
+    <input type="text" id="team-name" placeholder="Name des Teams">
+    <button id="create-team-btn">Team erstellen</button>
     <div class="team-container">
       <!-- Hier kommen die Teams hin -->
     </div>
@@ -78,4 +63,11 @@
           <div class="team-body">
             <p class="team-member">Mitglied 1</p>
             <p class="team-member">Mitglied 2</p>
-            <p class="team-member">Mit
+            <p class="team-member">Mitglied 3</p>
+          </div>
+        `;
+        teamContainer.appendChild(teamCard);
+      });
+    </script>
+  </body>
+</html>
