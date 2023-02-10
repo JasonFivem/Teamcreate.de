@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Team Management</title>
+</head>
+<body>
+  <h1>Team Management</h1>
+  <h2>Teams</h2>
+  <ul id="teams">
+    <!-- Teams werden hier aufgelistet -->
+  </ul>
+  <h2>Mitglieder</h2>
+  <ul id="members">
+    <!-- Mitglieder werden hier aufgelistet -->
+  </ul>
+  <h2>Neues Team erstellen</h2>
+  <form id="create-team-form">
+    <input type="text" id="team-name" placeholder="Teamname">
+    <button type="submit">Team erstellen</button>
+  </form>
+  <h2>Mitglied hinzufügen</h2>
+  <form id="create-member-form">
+    <input type="text" id="member-name" placeholder="Mitgliedsname">
+    <select id="member-team">
+      <!-- Teams werden hier aufgelistet -->
+    </select>
+    <button type="submit">Mitglied hinzufügen</button>
+  </form>
+  <script>
+    // Hier können Sie JavaScript-Code zur Verwaltung von Teams und Mitgliedern hinzufügen
+  </script>
+</body>
+</html>
