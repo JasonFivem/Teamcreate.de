@@ -2,75 +2,50 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Team Ersteller</title>
+    <title>Team Creator</title>
     <style>
       /* Hier kommt dein CSS */
-      body {
-        font-family: Arial, sans-serif;
-      }
-      
-      h1 {
-        text-align: center;
-        margin-top: 50px;
-      }
-      
       .team-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin-top: 50px;
       }
-      
       .team-card {
         width: 300px;
         height: 400px;
         background-color: white;
-        border: 1px solid lightgray;
+        border: 1px solid black;
         margin: 20px;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
         text-align: center;
-        border-radius: 10px;
-        overflow: hidden;
       }
-      
       .team-header {
-        background-color: lightgray;
+        background-color: blue;
         height: 50px;
         line-height: 50px;
         font-size: 24px;
         font-weight: bold;
-        color: white;
-        text-align: center;
       }
-      
       .team-body {
         padding: 20px;
       }
-      
       .team-member {
         margin-top: 20px;
         font-size: 18px;
       }
-      
-      .form-container {
-        display: flex;
-        justify-content: center;
-        margin-top: 50px;
+      .create-team-container {
+        text-align: center;
+        margin-bottom: 20px;
       }
-      
-      input[type="text"] {
-        padding: 10px 20px;
+      .team-name-input {
         font-size: 18px;
-        margin-right: 20px;
-        border-radius: 5px;
-        border: 1px solid lightgray;
+        padding: 10px;
+        width: 50%;
       }
-      
-      button {
-        padding: 10px 20px;
+      .create-team-btn {
         font-size: 18px;
+        padding: 10px 20px;
         background-color: lightgray;
-        color: white;
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -78,10 +53,11 @@
     </style>
   </head>
   <body>
-    <h1>Team Ersteller</h1>
-    <div class="form-container">
-      <input type="text" id="team-name" placeholder="Name des Teams">
-      <button id="create-team-btn">Team erstellen</button>
+    <div class="create-team-container">
+      <h1>Team Creator</h1>
+      <p>Create your own team:</p>
+      <input type="text" id="team-name-input" placeholder="Team Name" class="team-name-input">
+      <button id="create-team-btn" class="create-team-btn">Create Team</button>
     </div>
     <div class="team-container">
       <!-- Hier kommen die Teams hin -->
@@ -90,9 +66,17 @@
       // Hier kommt dein JavaScript
       const createTeamBtn = document.querySelector("#create-team-btn");
       const teamContainer = document.querySelector(".team-container");
-      const teamNameInput = document.querySelector("#team-name");
+      const teamNameInput = document.querySelector("#team-name-input");
       let teamId = 0;
 
       createTeamBtn.addEventListener("click", function() {
         const teamName = teamNameInput.value;
-        if (!team
+        if (!teamName) {
+          return alert("Please enter a team name.");
+        }
+
+        const teamCard = document.createElement("div");
+        teamCard.classList.add("team-card");
+        teamCard.innerHTML = `
+          <div class="team-header">${teamName}</div>
+          <div class="team-body">
