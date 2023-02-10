@@ -80,3 +80,17 @@
         teamCard.innerHTML = `
           <div class="team-header">${teamName}</div>
           <div class="team-body">
+  createTeamBtn.addEventListener("click", function() {
+    const teamName = teamNameInput.value;
+    if (!teamName) {
+      return alert("Please enter a team name.");
+    }
+
+    const teamCard = document.createElement("div");
+    teamCard.classList.add("team-card");
+    teamCard.innerHTML = `
+      <div class="team-header">${teamName}</div>
+      <div class="team-body">
+        <p class="team-member">Member 1</p>
+        <p class="team-member">Member 2</p>
+        <p class="team-member">Member
